@@ -133,6 +133,8 @@ layers_num = length(Vp_true);
 Vs_true_profile = [h_true Vs_true];
 
 % note: the search space has a significant impact on the inversion results
+%   the two-stage inversion alleviates this effect by adaptively narrowing 
+%   the search space in the second stage
 Vs_profile_lower = [1.3 2.6 3.25 3.25 100 130 130 300 500]; % search space
 Vs_profile_upper = [2.7 5.4 6.75 6.75 500 500 500 675 780]; % search space
 
@@ -283,4 +285,5 @@ axis([100 800 0 25]);
 set(gca,'FontName','Times New Roman','FontSize',myFontSize);
 set(gca,'XTick',0:200:800);
 set(gca,'YTick',0:5:25);
+
 % set(figure(6),'Position',[680,100,560,880]); %[left, bottom, width, height]
